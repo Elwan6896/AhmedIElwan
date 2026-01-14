@@ -1,0 +1,353 @@
+blockquote {
+  margin: 3%;
+  border-left: 10px solid #68a9ff;
+  padding: 2%;
+  color: #222;
+  background: #f1f1f1;
+  font-style: italic;
+  line-height: 130%;
+}
+
+a, a:link, a:visited {
+  color: #308fd9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #80bbff;
+}
+
+.top {
+  width: 100%;
+  background: #222 url(https://subtlepatterns.com/patterns/navy_blue.png);
+  border-bottom: 3px solid #ccc;
+}
+
+.header {
+  max-width: 1200px;
+  width: 98%;
+  height: 8.8em;
+  margin: 0px auto;
+  overflow: hidden;
+}
+.header .social {
+  float: right;
+  padding: 35px 0 0 0;
+}
+.header .social img {
+  opacity: 0.85;
+  transition: all 0.3s;
+}
+.header .social img:hover {
+  opacity: 1;
+}
+.header h1 {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+  color: #fff;
+}
+.header h1 span {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.8em;
+}
+.header .author {
+  font-size: 0.8em;
+  font-weight: normal;
+  border-top: 1px dashed #555;
+  border-bottom: 1px dashed #555;
+  max-width: 160px;
+  text-align: center;
+  margin: -1em auto 0 auto;
+  padding: 0.3em;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.content {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.date {
+  float: left;
+  width: 10%;
+  color: #444;
+  text-align: center;
+}
+.date span {
+  margin: 0;
+  line-height: 50%;
+}
+.date .day {
+  float: left;
+  margin-top: 0.1em;
+  width: 100%;
+  color: #68a9ff;
+  font-size: 200%;
+}
+
+.date-line {
+  display: none;
+}
+
+.article {
+  width: 90%;
+  margin: 0 0 6em 0;
+  float: left;
+  padding: 0 1.3em 0 1.3em;
+  border-left: 5px solid #308fd9;
+}
+.article img {
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  background: url(https://subtlepatterns.com/patterns/ticks.png) #f1f1f1;
+}
+.article h2 {
+  font-weight: normal;
+  font-size: 55px;
+  color: #333;
+  margin: 0;
+}
+.article h3 {
+  font-weight: normal;
+  font-size: 16px;
+  color: #888;
+  font-style: italic;
+  margin: 0 0 1em 0;
+}
+.article p {
+  margin: 0;
+  padding-top: 8px;
+  color: #555;
+  text-align: justify;
+  font-size: 1.4em;
+  line-height: 150%;
+  text-indent: 2em;
+}
+.article .firstpara {
+  text-indent: 0;
+}
+.article .pause {
+  margin: 2em auto 2em auto;
+  color: #444;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.article .firstcharacter {
+  float: left;
+  font-size: 5em;
+  line-height: 0.6em;
+  padding-top: 0.12em;
+  padding-right: 0.1em;
+  padding-left: 0;
+}
+
+.footer {
+  max-width: 1200px;
+  width: 98%;
+  height: 50px;
+  margin: 0px auto;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+}
+.footer .copy {
+  float: right;
+  font-style: italic;
+  color: #888;
+  padding: 1% 1% 0 0;
+}
+
+.prev a, .next a {
+  position: fixed;
+  bottom: 12.6em;
+  padding: 1em;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.prev a:hover, .next a:hover {
+  background: #fff;
+}
+
+.prev a {
+  left: 300px;
+}
+
+.next a {
+  right: 0.7em;
+}
+
+@media only screen and (max-width: 450px) {
+  .content {
+    margin-top: 2em;
+  }
+  .social {
+    display: none;
+  }
+  .date {
+    display: none;
+  }
+  .date-line {
+    display: inline;
+  }
+  .article {
+    width: 100%;
+    margin: 0 auto 2em auto;
+    border-left: none;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #ccc;
+  }
+  .article p {
+    font-size: 1.2em;
+  }
+  .header {
+    height: auto;
+    position: fixed;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    background: #222 url(https://subtlepatterns.com/patterns/navy_blue.png);
+  }
+  .header img {
+    height: 20px;
+    width: 20px;
+  }
+  .header h1 {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    color: #f1f1f1;
+  }
+  .header h1 span {
+    font-size: 80%;
+  }
+  .header .author {
+    display: none;
+  }
+  .footer {
+    text-align: center;
+    padding: 3%;
+    height: 40px;
+  }
+  .footer .copy {
+    float: none;
+  }
+  .prev a, .next a {
+    position: relative;
+    margin-bottom: 2em;
+    text-align: center;
+    top: 0;
+  }
+  .prev a {
+    float: left;
+    width: 40%;
+  }
+  .next a {
+    float: right;
+    width: 40%;
+  }
+}
+::selection {
+  color: white;
+  background: #444;
+}
+
+/* ========== Swiper Navigation Buttons ========== */
+.blog-slider-button-prev,
+.blog-slider-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: var(--skin-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(138, 73, 255, 0.4);
+}
+
+.blog-slider-button-prev {
+  left: -25px;
+}
+
+.blog-slider-button-next {
+  right: -25px;
+}
+
+.blog-slider-button-prev:hover,
+.blog-slider-button-next:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 25px rgba(138, 73, 255, 0.5);
+}
+
+.blog-slider-button-prev i,
+.blog-slider-button-next i {
+  font-size: 20px;
+}
+
+@media (max-width: 1400px) {
+  .blog-slider-button-prev {
+    left: 10px;
+  }
+  .blog-slider-button-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-slider-button-prev,
+  .blog-slider-button-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .blog-slider-button-prev {
+    left: 5px;
+  }
+  
+  .blog-slider-button-next {
+    right: 5px;
+  }
+}
+
+/* ========== Blog Slider Container Adjustments ========== */
+.blog-slider {
+  position: relative;
+  padding: 20px 40px;
+}
+
+@media (max-width: 1400px) {
+  .blog-slider {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-slider {
+    padding: 20px 30px;
+  }
+}
+
+/* Hide old Prev/Next links */
+.prev, .next {
+  display: none;
+}
+
+/*# sourceMappingURL=blogs.css.map */

@@ -1,0 +1,267 @@
+
+
+
+
+blockquote {
+  margin:3%;
+  border-left:10px solid #68a9ff;
+  padding: 2%;
+  color:#222;
+  background:#f1f1f1;
+  font-style:italic;
+  line-height:130%;
+}
+
+a, a:link, a:visited {
+  color:#308fd9;
+  text-decoration:none;
+  transition: color .3s;
+}
+
+a:hover {
+  color:#80bbff;
+}
+
+.top {
+  width:100%; 
+  background: #222 url(https://subtlepatterns.com/patterns/navy_blue.png);
+  border-bottom:3px solid #ccc;
+}
+
+.header {
+  max-width:1200px;
+  width:98%;
+  height:8.8em;
+  margin:0px auto;
+  overflow:hidden;
+  .social {
+    float:right;
+    padding:35px 0 0 0;
+    img {
+      opacity:0.85;
+      transition:all 0.3s;
+    }
+    img:hover {
+        opacity:1;
+      }
+  }
+  h1 {
+    text-align:center;
+    font-style:italic;
+    font-weight:normal;
+    color:#fff;
+    span {
+      margin:0;
+      font-weight:normal;
+      font-size:1.8em;
+    }
+  }
+  .author {
+    font-size:0.8em;
+    font-weight:normal;
+    border-top:1px dashed #555;
+    border-bottom:1px dashed #555;
+    max-width:160px;
+    text-align:center;
+    margin:-1em auto 0 auto;
+    padding:0.3em;
+    text-transform:uppercase;
+    color:#ccc;
+  }
+}
+
+.content {
+  max-width: 750px;
+  margin:40px auto;
+  padding:0;
+}
+
+.date {
+  float:left;
+  width:10%;
+  color:#444;
+  text-align:center;
+  span {
+    margin:0;
+    line-height:50%;
+  }
+  .day {
+    float:left;
+    margin-top:0.1em;
+    width:100%;
+    color:#68a9ff;
+    font-size:200%;
+  }
+}
+
+.date-line {
+  display:none;
+}
+
+.article {
+  width:90%;
+  margin:0 0 6em 0;
+  float:left;
+  padding:0 1.3em 0 1.3em;
+  border-left:5px solid #308fd9;
+  img {
+    width:100%;
+    height:auto;
+    padding:2%;
+    margin-bottom:4%;
+    border:1px solid #ccc;
+    background: url(https://subtlepatterns.com/patterns/ticks.png) #f1f1f1;
+  }
+  h2 {
+    font-weight: normal;
+    font-size:55px;
+    color:#333;
+    margin:0;
+  }
+  h3 {
+    font-weight: normal;
+    font-size:16px;
+    color:#888;
+    font-style:italic;
+    margin:0 0 1em 0;
+  }
+  p {
+    margin:0;
+    padding-top:8px;
+    color:#555;
+    text-align:justify;
+    font-size:1.4em;
+    line-height:150%;
+    text-indent:2em;
+  }
+  .firstpara {
+    text-indent:0;
+  }
+  .pause {
+    margin:2em auto 2em auto;
+    color:#444;
+    width:60%;
+    padding:10px;
+    text-align:center;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+  }
+  .firstcharacter {
+    float: left;
+    font-size:5em;
+    line-height: 0.6em;
+    padding-top: 0.12em;
+    padding-right: 0.1em;
+    padding-left: 0;
+  }
+}
+
+.footer {
+  max-width:1200px;
+  width:98%;
+  height:50px;
+  margin:0px auto;
+  overflow:hidden;
+  border-top:1px solid #ccc;
+  .copy {
+    float:right;
+    font-style:italic;
+    color:#888;
+    padding: 1% 1% 0 0;
+  }
+}
+
+.prev a, .next a {
+  position:fixed;
+  bottom:12.6em;
+  padding:1em;
+  background: #f1f1f1;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+.prev a:hover, .next a:hover {
+  background:#fff;
+}
+.prev a {
+  left:300px;
+}
+.next a {
+  right:0.7em;
+}
+
+@media only screen 
+    and (max-width : 450px) {
+  .content {
+    margin-top:2em;
+  }
+  .social {
+    display:none;
+  }
+  .date {
+    display:none;
+  }
+  .date-line {
+    display:inline;
+  }
+  .article {
+    width:100%;
+    margin:0 auto 2em auto;
+    border-left:none;
+    padding-bottom:2em;
+    border-bottom:1px solid #ccc;
+    p {
+      font-size:1.2em;
+    }
+  }
+  .header {
+    height:auto;
+    position:fixed;
+    top:0;
+    padding:0;
+    margin:0;
+    background:#222 url(https://subtlepatterns.com/patterns/navy_blue.png);
+    img {
+      height:20px;
+      width:20px;
+    }
+    h1 {
+      text-align:center;
+      width:100%;
+      margin:0;
+      color:#f1f1f1;
+      span {
+        font-size:80%;
+      }}
+    .author {
+      display:none;
+    }
+  }
+  .footer {
+    text-align:center;
+    padding:3%;
+    height:40px;
+    .copy {
+      float:none;
+    }
+  }
+  .prev a, .next a {
+    position:relative;
+    margin-bottom:2em;
+    text-align:center;
+    top:0;
+  }
+  .prev a {
+    float:left;
+    width:40%;
+  }
+  .next a {
+    float:right;
+    width:40%;
+    
+  }
+}
+
+::selection {
+  color: white;
+  background: #444;
+}
