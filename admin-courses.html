@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="google-site-verification" content="1bANLWF1jAb_fmYftrii5UHE-gxYPmQjG5tigsLrGYY" />
+    <title>Manage Courses - Elwan-Portfolio Admin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="http://localhost/Elwan-portfolio-main/img/logo-white.svg">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <!-- Font Awesome Free -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/blog.css">
+    <link rel="stylesheet" type="text/css" href="css/courses.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-1" href="css/skins/color-1.css">
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-2" href="css/skins/color-2.css"
+        disabled>
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-3" href="css/skins/color-3.css"
+        disabled>
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-4" href="css/skins/color-4.css"
+        disabled>
+    <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5" href="css/skins/color-5.css"
+        disabled>
+    <!-- Admin Dashboard Custom CSS -->
+    <style>
+        .admin-header {
+            background: var(--bg-black-50);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .admin-header .header-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .admin-header h2 {
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .admin-header p {
+            color: var(--text-color-2);
+        }
+
+        .courses-section {
+            background: var(--bg-black-50);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .courses-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--bg-black-100);
+        }
+
+        .courses-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+        }
+
+        .courses-header .courses-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .courses-count {
+            color: var(--text-color-2);
+            font-size: 14px;
+        }
+
+        .courses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .course-admin-card {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: var(--bg-black-100);
+            border-radius: 12px;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .course-admin-thumbnail {
+            position: relative;
+            height: 140px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .course-admin-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-level-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .course-level-badge.beginner {
+            background: #43e97b;
+            color: #000;
+        }
+
+        .course-level-badge.intermediate {
+            background: #fa709a;
+            color: #fff;
+        }
+
+        .course-level-badge.advanced {
+            background: #ff6b6b;
+            color: #fff;
+        }
+
+        .course-admin-info h4 {
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-size: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .course-admin-info p {
+            color: var(--text-color-2);
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .course-admin-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-color-3);
+            margin-bottom: 10px;
+        }
+
+        .course-admin-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .course-admin-topics {
+            font-size: 12px;
+            color: var(--text-color-2);
+            margin-bottom: 15px;
+        }
+
+        .course-admin-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn.btn-edit {
+            background: #4facfe;
+            color: white;
+        }
+
+        .action-btn.btn-view {
+            background: var(--skin-color);
+            color: white;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-color-2);
+        }
+
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: var(--skin-color);
+        }
+
+        .empty-state h4 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        /* Info banner */
+        .info-banner {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-banner i {
+            font-size: 28px;
+        }
+
+        .info-banner h4 {
+            margin-bottom: 5px;
+        }
+
+        .info-banner p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .info-banner a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .courses-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    <div id="global-rain"></div>
+
+    <div class="main-container">
+        <div class="aside">
+            <div class="logo">
+                <a href=""><span>E</span>lwan</a>
+            </div>
+            <div class="main-logo">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="102" height="102">
+                    <path
+                        d="M0 0 C1.47668858 0.0133035 2.95331108 0.03716415 4.4296875 0.0703125 C5.18378906 0.07933594 5.93789063 0.08835938 6.71484375 0.09765625 C8.57826004 0.1212438 10.44151343 0.15711531 12.3046875 0.1953125 C12.3046875 1.8453125 12.3046875 3.4953125 12.3046875 5.1953125 C9.6646875 5.1953125 7.0246875 5.1953125 4.3046875 5.1953125 C4.3046875 12.4553125 4.3046875 19.7153125 4.3046875 27.1953125 C6.9446875 27.1953125 9.5846875 27.1953125 12.3046875 27.1953125 C12.3046875 28.8453125 12.3046875 30.4953125 12.3046875 32.1953125 C7.6846875 32.1953125 3.0646875 32.1953125 -1.6953125 32.1953125 C-2.0253125 24.9353125 -2.3553125 17.6753125 -2.6953125 10.1953125 C-4.3453125 13.1653125 -5.9953125 16.1353125 -7.6953125 19.1953125 C-6.7053125 19.5253125 -5.7153125 19.8553125 -4.6953125 20.1953125 C-4.6953125 21.5153125 -4.6953125 22.8353125 -4.6953125 24.1953125 C-5.7678125 24.2159375 -6.8403125 24.2365625 -7.9453125 24.2578125 C-11.62480391 24.78613095 -11.62480391 24.78613095 -13.05078125 26.8203125 C-14.02438045 28.56365259 -14.86903909 30.377511 -15.6953125 32.1953125 C-18.0053125 32.1953125 -20.3153125 32.1953125 -22.6953125 32.1953125 C-21.25638562 28.29762377 -19.42566094 24.86873787 -17.2890625 21.30859375 C-16.29712891 19.6544043 -16.29712891 19.6544043 -15.28515625 17.96679688 C-14.94210449 17.39920654 -14.59905273 16.83161621 -14.24560547 16.24682617 C-13.19386264 14.50541191 -12.14929614 12.75983968 -11.10546875 11.01367188 C-4.62498661 0.24444961 -4.62498661 0.24444961 0 0 Z "
+                        fill="currentcolor" transform="translate(46.6953125,34.8046875)" />
+                    <path
+                        d="M0 0 C3.95781786 0.27612683 5.69956508 0.74053348 8.75 3.375 C12.90668576 8.22446672 14.06117849 11.70881209 14 18 C13.17969183 22.51169492 11.54302522 25.85509482 8.125 28.9375 C5.21532999 30.85788221 3.42802638 31.69752708 0 32 C-0.3125 29.1875 -0.3125 29.1875 0 26 C2.375 24.4375 2.375 24.4375 5 23 C6.89441323 19.90005108 7.00323683 18.09224952 6.875 14.4375 C5.92078686 10.68880554 4.99526478 9.35990558 2 7 C1.34 6.67 0.68 6.34 0 6 C0 4.02 0 2.04 0 0 Z "
+                        fill="currentcolor" transform="translate(62,35)" />
+                    <path d="M0 0 C1.98 0 3.96 0 6 0 C6 1.65 6 3.3 6 5 C4.02 5 2.04 5 0 5 C0 3.35 0 1.7 0 0 Z "
+                        fill="currentcolor" transform="translate(53,48)" />
+                    <path d="M0 0 C1.65 0 3.3 0 5 0 C5 1.65 5 3.3 5 5 C3.35 5 1.7 5 0 5 C0 3.35 0 1.7 0 0 Z "
+                        fill="currentcolor" transform="translate(62,48)" />
+                </svg>
+            </div>
+            <div class="nav-toggler">
+                <span></span>
+            </div>
+            <ul class="nav">
+                <li><a href="admin-dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a></li>
+                <li><a href="admin-blog.html"><i class="fa fa-pen-nib"></i>Manage Blogs</a></li>
+                <li><a class="active" href="admin-courses.html"><i class="fa fa-graduation-cap"></i>Manage Courses</a>
+                </li>
+                <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+
+            <!-- Admin Content -->
+            <div class="content admin-content">
+                <div class="admin-header">
+                    <div class="header-icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <h2>Manage Courses</h2>
+                    <p>View and manage your courses</p>
+                </div>
+
+                <!-- Info Banner -->
+                <div class="info-banner">
+                    <i class="fa fa-info-circle"></i>
+                    <div>
+                        <h4>How to Edit Courses</h4>
+                        <p>This is a static site hosted on GitHub Pages. To add or edit courses, you need to modify the
+                            <code>data/courses.json</code> file directly. <a
+                                href="https://github.com/Elwan6896/Elwan-portfolio/edit/main/data/courses.json"
+                                target="_blank">Edit on GitHub →</a></p>
+                    </div>
+                </div>
+
+                <div class="courses-section">
+                    <div class="courses-header">
+                        <div class="courses-icon">
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                        <h3>Your Courses</h3>
+                        <span class="courses-count" id="coursesCount">Loading...</span>
+                    </div>
+                    <div id="coursesList" class="courses-list">
+                        <div class="empty-state">
+                            <i class="fa fa-spinner fa-spin"></i>
+                            <p>Loading courses...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Footer section Start-->
+            <section class="footer-section footer section" id="footer">
+                <div class="footer-container">
+                    <div class="footer-about">
+                        <h3>Ahmed Elwan</h3>
+                        <p>Front-End & WordPress Developer</p>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>© 2026 Ahmed Elwan. All rights reserved.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scroll btn -->
+    <button id="scrollTopBtn" aria-label="Scroll to top" style="display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/admin-auth.js"></script>
+
+    <script>
+        // Check authentication
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.AdminAuth && !window.AdminAuth.isAuthenticated()) {
+                window.location.href = 'admin-dashboard.html';
+                return;
+            }
+
+            // Authenticated, load courses
+            document.body.style.opacity = '0';
+            setTimeout(function () {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+
+            loadCourses();
+        });
+
+        // Load and display courses
+        async function loadCourses() {
+            const listContainer = document.getElementById('coursesList');
+            const coursesCount = document.getElementById('coursesCount');
+
+            try {
+                const courses = await window.DataModule.getCourses();
+
+                // Update count
+                coursesCount.textContent = `${courses.length} course${courses.length !== 1 ? 's' : ''}`;
+
+                if (courses.length === 0) {
+                    listContainer.innerHTML = `
+                        <div class="empty-state">
+                            <i class="fa fa-graduation-cap"></i>
+                            <h4>No courses yet</h4>
+                            <p>Add courses to data/courses.json to get started</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                listContainer.innerHTML = "";
+
+                courses.forEach((course, i) => {
+                    const imageUrl = course.image && course.image !== "" ? course.image : "img/html.jpg";
+                    const topicsText = course.topics ? course.topics.slice(0, 4).join(', ') : 'No topics';
+
+                    const card = document.createElement('div');
+                    card.className = 'course-admin-card';
+                    card.style.animationDelay = `${i * 0.1}s`;
+
+                    card.innerHTML = `
+                        <div class="course-admin-thumbnail">
+                            <img src="${imageUrl}" alt="${window.DataModule.escapeHtml(course.title)}" onerror="this.src='img/html.jpg'">
+                            <span class="course-level-badge ${course.level}">${course.level}</span>
+                        </div>
+                        <div class="course-admin-info">
+                            <h4>${window.DataModule.escapeHtml(course.title)}</h4>
+                            <p>${window.DataModule.escapeHtml(course.subtitle)}</p>
+                            <div class="course-admin-meta">
+                                <span><i class="fa fa-clock"></i> ${window.DataModule.escapeHtml(course.duration)}</span>
+                                <span><i class="fa fa-video"></i> ${window.DataModule.escapeHtml(course.lessons)}</span>
+                                <span><i class="fa fa-play-circle"></i> ${course.previewVideos ? course.previewVideos.length : 0} videos</span>
+                            </div>
+                            <div class="course-admin-topics">
+                                <strong>Topics:</strong> ${window.DataModule.escapeHtml(topicsText)}
+                            </div>
+                        </div>
+                        <div class="course-admin-actions">
+                            <button class="action-btn btn-edit" onclick="editCourse()" title="Edit on GitHub">
+                                <i class="fa fa-edit"></i> Edit JSON
+                            </button>
+                            <a href="courses-single.html?course=${course.id}" target="_blank" class="action-btn btn-view" title="View Course">
+                                <i class="fa fa-eye"></i> View
+                            </a>
+                        </div>
+                    `;
+
+                    listContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading courses:', error);
+                listContainer.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fa fa-exclamation-triangle"></i>
+                        <h4>Error loading courses</h4>
+                        <p>Please check that data/courses.json exists</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Edit course - opens GitHub editor
+        function editCourse() {
+            window.open(`https://github.com/Elwan6896/Elwan-portfolio/edit/main/data/courses.json`, '_blank');
+        }
+    </script>
+
+    <script src="js/cursor.js"></script>
+</body>
+
+</html>

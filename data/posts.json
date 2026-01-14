@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1704067200000,
+        "title": "Getting Started with Web Development",
+        "brief": "Learn the fundamentals of web development including HTML, CSS, and JavaScript basics.",
+        "content": "Web development is an exciting journey that starts with understanding the three core technologies: HTML, CSS, and JavaScript.\n\n## HTML - The Structure\nHTML (HyperText Markup Language) provides the structure for your web pages. It uses tags to define elements like headings, paragraphs, images, and links.\n\n## CSS - The Styling\nCSS (Cascading Style Sheets) handles the visual presentation of your HTML elements. You can control colors, fonts, layouts, and animations.\n\n## JavaScript - The Interactivity\nJavaScript brings your web pages to life with dynamic behavior, interactivity, and user engagement features.\n\n## Getting Started\n1. Set up a code editor like VS Code\n2. Create your first HTML file\n3. Add some basic styling with CSS\n4. Add interactivity with JavaScript\n\nStart with simple projects and gradually increase complexity as you learn more concepts.",
+        "image": "img/html.jpg",
+        "date": "2024-01-01"
+    },
+    {
+        "id": 1704153600000,
+        "title": "Modern CSS Techniques",
+        "brief": "Explore modern CSS features like Flexbox, Grid, and CSS Variables for responsive design.",
+        "content": "Modern CSS has evolved significantly, offering powerful layout systems and features that make responsive design easier than ever.\n\n## CSS Flexbox\nFlexbox is a one-dimensional layout system perfect for aligning items and distributing space within containers.\n\n## CSS Grid\nCSS Grid provides a two-dimensional layout system for complex web page layouts.\n\n## CSS Variables\nCSS variables (custom properties) allow you to define reusable values throughout your stylesheet.\n\n## Responsive Design\nUse media queries to create layouts that adapt to different screen sizes and devices.\n\n## Best Practices\n- Use semantic HTML\n- Mobile-first approach\n- Optimize for performance\n- Test across multiple browsers",
+        "image": "img/css.png",
+        "date": "2024-01-02"
+    },
+    {
+        "id": 1704240000000,
+        "title": "JavaScript ES6+ Features",
+        "brief": "Master modern JavaScript features including arrow functions, destructuring, and async/await.",
+        "content": "ES6 (ECMAScript 2015) and subsequent versions introduced many powerful features that have transformed JavaScript development.\n\n## Arrow Functions\nConcise syntax for writing function expressions:\n```javascript\nconst add = (a, b) => a + b;\n```\n\n## Template Literals\nString interpolation with backticks:\n```javascript\nconst greeting = `Hello, ${name}!`;\n```\n\n## Destructuring\nExtract values from arrays and objects:\n```javascript\nconst { name, age } = person;\n```\n\n## Async/Await\nClean syntax for handling asynchronous operations:\n```javascript\nconst data = await fetchData();\n```\n\n## Modules\nOrganize code into reusable modules using import/export.",
+        "image": "img/js.png",
+        "date": "2024-01-03"
+    },
+    {
+        "id": 1704326400000,
+        "title": "Git and GitHub Essentials",
+        "brief": "Learn version control with Git and collaborate effectively using GitHub.",
+        "content": "Git is a distributed version control system that tracks changes in your code, while GitHub provides a platform for hosting Git repositories.\n\n## Getting Started with Git\n- Initialize a repository: `git init`\n- Track changes: `git add .`\n- Commit changes: `git commit -m \"message\"`\n\n## Working with GitHub\n- Create a repository on GitHub\n- Push your code: `git push origin main`\n- Pull changes: `git pull`\n\n## Branching\n- Create branches for new features\n- Merge branches when complete\n- Resolve conflicts collaboratively\n\n## Best Practices\n- Write clear commit messages\n- Use branches for features\n- Review code before merging\n- Keep your repository organized",
+        "image": "img/git.png",
+        "date": "2024-01-04"
+    }
+]
+
