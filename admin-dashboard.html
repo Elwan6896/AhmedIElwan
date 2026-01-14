@@ -306,13 +306,13 @@
         }
 
         .dashboard-card h3 {
-            color: var(--text-color);
+            color: var(--bg-black-900);
             margin-bottom: 10px;
             font-size: 20px;
         }
 
         .dashboard-card p {
-            color: var(--text-color-2);
+            color: var(--bg-black-900);
             font-size: 14px;
             margin-bottom: 20px;
             line-height: 1.6;
@@ -333,6 +333,15 @@
 
         .dashboard-card:hover .card-link i {
             transform: translateX(5px);
+        }
+
+        .dashboard-card-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .dashboard-card-link:hover {
+            text-decoration: none;
         }
 
         /* Stats Section */
@@ -524,7 +533,7 @@
                 </div>
                 <div class="welcome-text">
                     <h3>Admin Dashboard</h3>
-                    <p>Welcome back, <span id="adminUsernameDisplay">Admin</span>!</p>
+                    <p>Welcome back, <span id="adminUsernameDisplay">Elwan</span>!</p>
                 </div>
             </div>
             <button class="logout-btn" onclick="handleLogout()">
@@ -549,29 +558,34 @@
         </div>
 
         <div class="dashboard-cards">
-            <div class="dashboard-card" onclick="window.location.href='admin-blog.html'">
-                <div class="card-icon blog-icon">
-                    <i class="fa fa-pen-nib"></i>
+            <a href="admin-blog.html" target="_blank" class="dashboard-card-link">
+                <div class="dashboard-card">
+                    <div class="card-icon blog-icon">
+                        <i class="fa fa-pen-nib"></i>
+                    </div>
+                    <h3>Manage Blogs</h3>
+                    <p>Create, edit, and manage your blog posts. Add new articles, update existing content, and keep
+                        your
+                        blog fresh.</p>
+                    <span class="card-link">
+                        Go to Blog Admin <i class="fa fa-arrow-right"></i>
+                    </span>
                 </div>
-                <h3>Manage Blogs</h3>
-                <p>Create, edit, and manage your blog posts. Add new articles, update existing content, and keep your
-                    blog fresh.</p>
-                <span class="card-link">
-                    Go to Blog Admin <i class="fa fa-arrow-right"></i>
-                </span>
-            </div>
+            </a>
 
-            <div class="dashboard-card" onclick="window.location.href='admin-courses.html'">
-                <div class="card-icon courses-icon">
-                    <i class="fa fa-graduation-cap"></i>
+            <a href="admin-courses.html" target="_blank" class="dashboard-card-link">
+                <div class="dashboard-card">
+                    <div class="card-icon courses-icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <h3>Manage Courses</h3>
+                    <p>Add and manage your courses. Create new learning materials, update course content, and track
+                        performance.</p>
+                    <span class="card-link">
+                        Go to Courses Admin <i class="fa fa-arrow-right"></i>
+                    </span>
                 </div>
-                <h3>Manage Courses</h3>
-                <p>Add and manage your courses. Create new learning materials, update course content, and track
-                    performance.</p>
-                <span class="card-link">
-                    Go to Courses Admin <i class="fa fa-arrow-right"></i>
-                </span>
-            </div>
+            </a>
         </div>
     </div>
 
